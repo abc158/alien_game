@@ -3,17 +3,16 @@
 
 import pygame
 from pygame.sprite import Sprite
+
 class Bullet(Sprite):
 #另外一种写法class Bullet(pygame.sprite.Sprite):
 #""" 一个对飞船发射的子弹进行管理的类 """
-    #接受创建 Car 实例所需的信息
+    #接受创建 Sprite 实例所需的信息
     def __init__(self, ai_settings, screen, ship):
-    #帮助 Python 将父类和子类关联起来
-        super(Bullet, self).__init__()  
+        super(Bullet, self).__init__()   #帮将父类和子类关联起来 不用列举父类的属性
         self.screen = screen
         #  在 (0,0) 处创建一个表示子弹的矩形，再设置正确的位置
-        self.rect = pygame.Rect(0, 0, ai_settings.bullet_width,
-        ai_settings.bullet_height)
+        self.rect = pygame.Rect(0, 0, ai_settings.bullet_width,ai_settings.bullet_height)
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
         # 存储用小数表示的子弹位置

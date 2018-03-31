@@ -9,7 +9,7 @@ class Ship():
         #  加载飞船图像并获取其外接矩形
         self.image = pygame.image.load('images/ship.bmp')
         self.ai_settings = ai_settings
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect()  #self.image此时已经变成了pygame.image.load
         self.screen_rect = screen.get_rect()
         #  在飞船的属性 center 中存储小数值
         self.center = float(self.rect.centerx)
